@@ -141,7 +141,7 @@ export default function NavUser() {
       </SidebarMenu>
 
       <SettingsDialog
-        key={`${String(isSettingsOpen)}-${session.user.name ?? ""}-${session.user.image ?? ""}`}
+        key={`${session.user.name ?? ""}-${session.user.image ?? ""}`}
         open={isSettingsOpen}
         onOpenChange={setIsSettingsOpen}
         user={session.user}

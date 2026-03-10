@@ -63,13 +63,10 @@ export default function SettingsDialog({
     onSubmit: async ({ value }) => {
       const trimmedName = value.name.trim();
       const trimmedImage = value.image.trim();
-      const updates: { image?: string; name: string } = {
+      const updates: { image: string | null; name: string } = {
+        image: trimmedImage || null,
         name: trimmedName,
       };
-
-      if (trimmedImage) {
-        updates.image = trimmedImage;
-      }
 
       const { error } = await authClient.updateUser(updates);
 
@@ -119,7 +116,7 @@ export default function SettingsDialog({
     validators: {
       onSubmit: z
         .object({
-          confirmPassword: z.string().min(8, "Confirm your new password"),
+          confirmPassword: z.string().min(8, "Confirm password must be at least 8 characters"),
           currentPassword: z.string().min(8, "Current password must be at least 8 characters"),
           newPassword: z.string().min(8, "New password must be at least 8 characters"),
         })
