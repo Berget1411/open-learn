@@ -14,6 +14,7 @@ export const web = await Vite("web", {
   assets: "dist",
   bindings: {
     VITE_SERVER_URL: alchemy.env.VITE_SERVER_URL!,
+    DEV_PORT: "3001",
   },
 });
 
@@ -31,7 +32,7 @@ export const server = await Worker("server", {
     POLAR_SUCCESS_URL: alchemy.env.POLAR_SUCCESS_URL!,
   },
   dev: {
-    port: 3000,
+    port: 3002,
   },
 });
 

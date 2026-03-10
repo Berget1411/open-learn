@@ -1,5 +1,6 @@
-import { cn } from "@open-learn/ui/lib/utils";
 import * as React from "react";
+
+import { cn } from "@open-learn/ui/lib/utils";
 
 function Card({
   className,
