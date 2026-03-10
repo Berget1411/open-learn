@@ -29,7 +29,7 @@ import { useTheme } from "@/components/theme-provider";
 import { AUTH_REDIRECT } from "@/features/auth/constants";
 import { authClient } from "@/lib/auth-client";
 
-import SettingsDialog from "./settings-dialog";
+import SettingsDialog from "../../auth/components/settings-dialog";
 
 function getInitials(name?: string | null) {
   if (!name) {
