@@ -106,6 +106,8 @@ open-learn/
 - `apps/web/AGENTS.md` - web feature and route composition rules
 - `packages/api/AGENTS.md` - tRPC contract and service-layer rules
 - `packages/db/AGENTS.md` - repository and persistence-layer rules
+- `packages/auth/AGENTS.md` - auth configuration and integration rules
+- `packages/ui/AGENTS.md` - shared UI primitive and styling rules
 
 ## Available Scripts
 
