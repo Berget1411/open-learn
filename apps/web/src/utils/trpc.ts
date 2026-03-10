@@ -1,4 +1,4 @@
-import type { AppRouter } from "@open-learn/api/routers/index";
+import type { AppRouter } from "@open-learn/api/trpc/routers/app";
 import { env } from "@open-learn/env/web";
 import { QueryCache, QueryClient } from "@tanstack/react-query";
 import { createTRPCClient, httpBatchLink } from "@trpc/client";

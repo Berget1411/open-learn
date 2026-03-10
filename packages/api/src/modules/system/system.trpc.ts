@@ -1,16 +1,17 @@
-import { protectedProcedure, publicProcedure, router } from "../index";
-import { todoRouter } from "./todo";
+import { router } from "../../trpc/init";
+import { protectedProcedure, publicProcedure } from "../../trpc/procedures";
 
-export const appRouter = router({
+export const systemProcedures = {
   healthCheck: publicProcedure.query(() => {
     return "OK";
   }),
+
   privateData: protectedProcedure.query(({ ctx }) => {
     return {
       message: "This is private",
       user: ctx.session.user,
     };
   }),
-  todo: todoRouter,
-});
-export type AppRouter = typeof appRouter;
+};
+
+export const systemRouter = router(systemProcedures);

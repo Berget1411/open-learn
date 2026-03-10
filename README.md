@@ -99,6 +99,14 @@ open-learn/
 │   └── db/          # Database schema & queries
 ```
 
+## Agent Docs
+
+- `AGENTS.md` - repo-wide architecture and modular development rules
+- `apps/server/AGENTS.md` - server transport and backend module rules
+- `apps/web/AGENTS.md` - web feature and route composition rules
+- `packages/api/AGENTS.md` - tRPC contract and service-layer rules
+- `packages/db/AGENTS.md` - repository and persistence-layer rules
+
 ## Available Scripts
 
 - `bun run dev`: Start all applications in development mode

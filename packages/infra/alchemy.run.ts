@@ -30,6 +30,10 @@ export const server = await Worker("server", {
     GOOGLE_GENERATIVE_AI_API_KEY: alchemy.secret.env.GOOGLE_GENERATIVE_AI_API_KEY!,
     POLAR_ACCESS_TOKEN: alchemy.secret.env.POLAR_ACCESS_TOKEN!,
     POLAR_SUCCESS_URL: alchemy.env.POLAR_SUCCESS_URL!,
+    GOOGLE_CLIENT_ID: alchemy.env.GOOGLE_CLIENT_ID!,
+    GOOGLE_CLIENT_SECRET: alchemy.secret.env.GOOGLE_CLIENT_SECRET!,
+    GITHUB_CLIENT_ID: alchemy.env.GITHUB_CLIENT_ID!,
+    GITHUB_CLIENT_SECRET: alchemy.secret.env.GITHUB_CLIENT_SECRET!,
   },
   dev: {
     port: 3002,

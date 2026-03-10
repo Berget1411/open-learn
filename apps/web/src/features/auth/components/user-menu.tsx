@@ -11,6 +11,7 @@ import {
 import { Skeleton } from "@open-learn/ui/components/skeleton";
 import { Link, useNavigate } from "@tanstack/react-router";
 
+import { AUTH_REDIRECT } from "../constants";
 import { authClient } from "@/lib/auth-client";
 
 export default function UserMenu() {
@@ -45,9 +46,7 @@ export default function UserMenu() {
               authClient.signOut({
                 fetchOptions: {
                   onSuccess: () => {
-                    navigate({
-                      to: "/",
-                    });
+                    navigate({ to: AUTH_REDIRECT.afterSignOut });
                   },
                 },
               });

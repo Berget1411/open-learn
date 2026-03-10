@@ -13,7 +13,8 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
-      "@open-learn/ui/*": ["../../packages/ui/src/*"]
+      "@open-learn/ui/*": ["../../packages/ui/src/*"],
+      "cloudflare:workers": ["../../packages/env/src/cloudflare-workers.d.ts"]
     }
   }
 }
