@@ -30,8 +30,8 @@
     "dotenv": "catalog:",
     "lucide-react": "catalog:",
     "next-themes": "catalog:",
-    "react": "catalog:",
-    "react-dom": "catalog:",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
     "sonner": "catalog:",
     "streamdown": "^1.6.10",
     "zod": "catalog:"

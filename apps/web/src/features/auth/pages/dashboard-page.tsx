@@ -1,18 +1,8 @@
 import { Button } from "@open-learn/ui/components/button";
 import { useQuery } from "@tanstack/react-query";
-import { redirect } from "@tanstack/react-router";
 
 import { trpc } from "@/utils/trpc";
 import { authClient } from "@/lib/auth-client";
-
-export async function dashboardBeforeLoad() {
-  const session = await authClient.getSession();
-  if (!session.data) {
-    redirect({ to: "/login", throw: true });
-  }
-  const { data: customerState } = await authClient.customer.state();
-  return { session, customerState };
-}
 
 interface DashboardPageProps {
   session: Awaited<ReturnType<typeof authClient.getSession>>;
