@@ -52,20 +52,16 @@ export default function AiPage() {
               <p className="mb-1 text-sm font-semibold">
                 {message.role === "user" ? "You" : "AI Assistant"}
               </p>
-              {message.parts?.map((part, index) => {
-                if (part.type !== "text") {
-                  return null;
-                }
-
-                return (
+              {message.parts
+                ?.filter((part) => part.type === "text")
+                .map((part, textIndex) => (
                   <Streamdown
-                    key={`${message.id}-${index}`}
+                    key={`${message.id}-text-${textIndex}`}
                     isAnimating={status === "streaming" && message.role === "assistant"}
                   >
                     {part.text}
                   </Streamdown>
-                );
-              })}
+                ))}
             </div>
           ))
         )}
@@ -80,7 +76,6 @@ export default function AiPage() {
           placeholder="Type your message..."
           className="flex-1"
           autoComplete="off"
-          autoFocus
         />
         <Button type="submit" size="icon" aria-label="Send message">
           <SendIcon />
