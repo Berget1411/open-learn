@@ -30,14 +30,12 @@ export default function NavWorkspaces({ items }: NavWorkspacesProps) {
             <SidebarMenuItem key={item.name}>
               <SidebarMenuButton asChild size="lg" tooltip={item.name}>
                 <Link to={item.to}>
-                  <div className="flex size-8 items-center justify-center rounded-none border bg-background">
+                  <div className="flex aspect-square size-8 shrink-0 items-center justify-center rounded-none border bg-background">
                     <item.icon />
                   </div>
-                  <div className="grid flex-1 text-left leading-tight">
+                  <div className="grid min-w-0 flex-1 text-left text-sm leading-tight">
                     <span className="truncate font-medium">{item.name}</span>
-                    <span className="truncate text-[11px] text-muted-foreground">
-                      {item.subtitle}
-                    </span>
+                    <span className="truncate text-xs text-muted-foreground">{item.subtitle}</span>
                   </div>
                 </Link>
               </SidebarMenuButton>

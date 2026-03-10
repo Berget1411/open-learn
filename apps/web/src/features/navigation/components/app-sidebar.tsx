@@ -83,14 +83,14 @@ export default function AppSidebar(props: React.ComponentProps<typeof Sidebar>) 
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
-            <SidebarMenuButton asChild size="lg">
+            <SidebarMenuButton asChild size="lg" tooltip="open-learn">
               <Link to="/">
-                <div className="flex size-8 items-center justify-center rounded-none bg-sidebar-primary text-sidebar-primary-foreground">
+                <div className="flex aspect-square size-8 shrink-0 items-center justify-center rounded-none bg-sidebar-primary text-sidebar-primary-foreground">
                   <CommandIcon />
                 </div>
-                <div className="grid flex-1 text-left leading-tight">
+                <div className="grid min-w-0 flex-1 text-left text-sm leading-tight">
                   <span className="truncate font-medium">open-learn</span>
-                  <span className="truncate text-[11px] text-sidebar-foreground/70">
+                  <span className="truncate text-xs text-sidebar-foreground/70">
                     Learn made easy
                   </span>
                 </div>
