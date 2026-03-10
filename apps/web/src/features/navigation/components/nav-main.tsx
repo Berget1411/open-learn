@@ -1,5 +1,6 @@
 import type { LucideIcon } from "lucide-react";
 import { Link, useRouterState } from "@tanstack/react-router";
+import type { RegisteredRouter, ToPathOption } from "@tanstack/react-router";
 import {
   SidebarGroup,
   SidebarGroupContent,
@@ -11,7 +12,7 @@ import {
 
 interface NavMainItem {
   title: string;
-  to: "/" | "/ai" | "/todos";
+  to: ToPathOption<RegisteredRouter>;
   icon: LucideIcon;
 }
 

@@ -1,5 +1,5 @@
 import type { LucideIcon } from "lucide-react";
-import { Link, useRouterState } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-router";
 import {
   SidebarGroup,
   SidebarGroupContent,
@@ -21,8 +21,6 @@ interface NavWorkspacesProps {
 }
 
 export default function NavWorkspaces({ items }: NavWorkspacesProps) {
-  const pathname = useRouterState({ select: (state) => state.location.pathname });
-
   return (
     <SidebarGroup>
       <SidebarGroupLabel>Workspaces</SidebarGroupLabel>
@@ -30,12 +28,7 @@ export default function NavWorkspaces({ items }: NavWorkspacesProps) {
         <SidebarMenu>
           {items.map((item) => (
             <SidebarMenuItem key={item.name}>
-              <SidebarMenuButton
-                asChild
-                isActive={pathname === item.to}
-                size="lg"
-                tooltip={item.name}
-              >
+              <SidebarMenuButton asChild size="lg" tooltip={item.name}>
                 <Link to={item.to}>
                   <div className="flex size-8 items-center justify-center rounded-none border bg-background">
                     <item.icon />
